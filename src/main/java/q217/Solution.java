@@ -4,8 +4,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 217. Contains Duplicate
- * See <a herf="https://leetcode.com/problems/contains-duplicate/">https://leetcode.com/problems/contains-duplicate/</a>
+ * 217. Contains Duplicate<br/>
+ * See <a herf="https://leetcode.com/problems/contains-duplicate/">
+ *       https://leetcode.com/problems/contains-duplicate/
+ *     </a><br/>
  */
 public class Solution {
     public boolean containsDuplicate(int[] nums) {

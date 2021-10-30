@@ -4,7 +4,7 @@ package q1941;
  * 1941. Check if All Characters Have Equal Number of Occurrences<br/>
  * See <a herf="https://leetcode.com/problems/check-if-all-characters-have-equal-number-of-occurrences/">
  *       https://leetcode.com/problems/check-if-all-characters-have-equal-number-of-occurrences/
- *     </a>
+ *     </a><br/>
  */
 public class Solution {
     public boolean areOccurrencesEqual(String s) {
