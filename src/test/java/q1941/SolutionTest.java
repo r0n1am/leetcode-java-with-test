@@ -30,12 +30,13 @@ class SolutionTest {
 
     @Test
     void shouldReturnTrueWithsSingleLetterMaxOccurrencesString() {
+        StringBuilder testString = new StringBuilder();
         for (int i = 0; i < 26; ++i) {
-            String testString = "";
+            testString.setLength(0);
             for (int j = 1; j <= 1000; ++j) {
-                testString += (char) ('a' + i);
+                testString.append((char) ('a' + i));
             }
-            assertTrue(s.areOccurrencesEqual(testString));
+            assertTrue(s.areOccurrencesEqual(testString.toString()));
         }
     }
 
