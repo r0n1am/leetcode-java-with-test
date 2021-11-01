@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
  *       https://leetcode.com/problems/the-number-of-the-smallest-unoccupied-chair/
  *     </a><br/>
  */
-public class Solution {
+class Solution {
 
     public int smallestChair(int[][] times, int targetFriend) {
         int targetArrivalTime = times[targetFriend][0];

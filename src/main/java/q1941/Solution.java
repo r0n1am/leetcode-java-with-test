@@ -6,7 +6,7 @@ package q1941;
  *       https://leetcode.com/problems/check-if-all-characters-have-equal-number-of-occurrences/
  *     </a><br/>
  */
-public class Solution {
+class Solution {
     public boolean areOccurrencesEqual(String s) {
         int[] results = new int[26];
         

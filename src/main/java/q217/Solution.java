@@ -9,7 +9,7 @@ import java.util.Set;
  *       https://leetcode.com/problems/contains-duplicate/
  *     </a><br/>
  */
-public class Solution {
+class Solution {
     public boolean containsDuplicate(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int num : nums) {

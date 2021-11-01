@@ -6,7 +6,7 @@ package q21;
  *       https://leetcode.com/problems/merge-two-sorted-lists/
  *     </a><br/>
  */
-public class Solution {
+class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
