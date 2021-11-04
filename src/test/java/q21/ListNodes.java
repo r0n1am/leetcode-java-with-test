@@ -1,6 +1,6 @@
 package q21;
 
-public class ListNodes {
+class ListNodes {
     ListNode expected;
     private ListNode expectedTail;
     ListNode left;
