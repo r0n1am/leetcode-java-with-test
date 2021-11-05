@@ -10,8 +10,6 @@ import java.util.*;
  */
 class Solution {
 
-    static final Object VISITED = new Object();
-
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
         List<List<Integer>> result = new ArrayList<>();
         if (root != null) {
@@ -22,42 +20,50 @@ class Solution {
             LinkedList<Integer> pathVals = new LinkedList<>();
 
             // the process node for subtracting the value
-            Deque<TreeNode> processingNodes = new LinkedList<>();
+            Deque<VisitTreeNode> processingNodes = new LinkedList<>();
+            processingNodes.push(new VisitTreeNode(root));
 
-            //the map to remember node is visited
-            Map<TreeNode, Object> visitedMap = new HashMap<>();
-
-            TreeNode currentNode = root;
-            do {
-                if (visitedMap.containsKey(currentNode)) {
-                    //visited before
+            while (!processingNodes.isEmpty()) {
+                VisitTreeNode currentNode = processingNodes.pop();
+                if (currentNode.isVisited) {
                     pathVals.removeLast();
-                    currentSum -= currentNode.val;
+                    currentSum -= currentNode.node.val;
 
                 // leaf node, check the value directly
-                } else if (currentNode.right == null && currentNode.left == null && currentSum + currentNode.val == targetSum) {
+                } else if (
+                    currentNode.node.right == null &&
+                    currentNode.node.left == null &&
+                    currentSum + currentNode.node.val == targetSum
+                ) {
                     ArrayList<Integer> path = new ArrayList<>(pathVals);
-                    path.add(currentNode.val);
+                    path.add(currentNode.node.val);
                     result.add(path);
                 } else {
-                    visitedMap.put(currentNode, VISITED);
-                    processingNodes.addFirst(currentNode);
-                    pathVals.add(currentNode.val);
-                    currentSum += currentNode.val;
+                    currentNode.isVisited = true;
+                    processingNodes.push(currentNode);
+                    pathVals.add(currentNode.node.val);
+                    currentSum += currentNode.node.val;
 
-                    if (currentNode.right != null) {
-                        processingNodes.addFirst(currentNode.right);
+                    if (currentNode.node.right != null) {
+                        processingNodes.push(new VisitTreeNode(currentNode.node.right));
                     }
-                    if (currentNode.left != null) {
-                        processingNodes.addFirst(currentNode.left);
+                    if (currentNode.node.left != null) {
+                        processingNodes.push(new VisitTreeNode(currentNode.node.left));
                     }
                 }
-
-                currentNode = processingNodes.poll();
-
-            } while (!processingNodes.isEmpty());
+            }
 
         }
         return result;
+    }
+}
+
+class VisitTreeNode {
+
+    final TreeNode node;
+    boolean isVisited = false;
+
+    public VisitTreeNode(TreeNode node) {
+        this.node = node;
     }
 }

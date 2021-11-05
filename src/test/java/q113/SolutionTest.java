@@ -23,6 +23,17 @@ class SolutionTest {
     }
 
     @Test
+    void shouldReturnOneResultRootOnly() {
+        TreeNode root = new TreeNode(1);
+
+        List<List<Integer>> results = s.pathSum(root, 1);
+        assertThat(results)
+            .hasSize(1)
+            .flatExtracting(identity())
+            .containsExactly(1);
+    }
+
+    @Test
     void shouldReturnOneResult() {
         TreeNode left = new TreeNode(2);
         TreeNode right = new TreeNode(9);
