@@ -81,7 +81,7 @@ class SolutionTest {
         }
     }
 
-    @RepeatedTest(2000)
+    @RepeatedTest(100)
     void shouldReturnCorrectResultWithRandomString() {
         StringBuilder testStringBuilder = new StringBuilder();
         int randomSize = 1 + r.nextInt(1000);

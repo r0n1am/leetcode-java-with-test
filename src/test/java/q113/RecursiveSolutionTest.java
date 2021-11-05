@@ -8,9 +8,9 @@ import java.util.List;
 import static java.util.function.Function.identity;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class CaseStudy1Test {
+class RecursiveSolutionTest {
 
-    static CaseStudy1 c = new CaseStudy1();
+    static RecursiveSolution s = new RecursiveSolution();
 
     @Test
     void shouldReturnEmptyResult() {
@@ -18,8 +18,19 @@ class CaseStudy1Test {
         TreeNode right = new TreeNode(3);
         TreeNode root = new TreeNode(1, left, right);
 
-        List<List<Integer>> results = c.pathSum(root, 5);
+        List<List<Integer>> results = s.pathSum(root, 5);
         assertThat(results).isEmpty();
+    }
+
+    @Test
+    void shouldReturnOneResultRootOnly() {
+        TreeNode root = new TreeNode(1);
+
+        List<List<Integer>> results = s.pathSum(root, 1);
+        assertThat(results)
+            .hasSize(1)
+            .flatExtracting(identity())
+            .containsExactly(1);
     }
 
     @Test
@@ -28,7 +39,7 @@ class CaseStudy1Test {
         TreeNode right = new TreeNode(9);
         TreeNode root = new TreeNode(1, left, right);
 
-        List<List<Integer>> results = c.pathSum(root, 3);
+        List<List<Integer>> results = s.pathSum(root, 3);
         assertThat(results)
             .hasSize(1)
             .flatExtracting(identity())
@@ -40,7 +51,7 @@ class CaseStudy1Test {
         TreeNode right = new TreeNode(-3);
         TreeNode root = new TreeNode(-2, null, right);
 
-        List<List<Integer>> results = c.pathSum(root, -5);
+        List<List<Integer>> results = s.pathSum(root, -5);
         assertThat(results)
             .hasSize(1)
             .flatExtracting(identity())
@@ -53,7 +64,7 @@ class CaseStudy1Test {
         TreeNode right = new TreeNode(2);
         TreeNode root = new TreeNode(1, left, right);
 
-        List<List<Integer>> results = c.pathSum(root, 3);
+        List<List<Integer>> results = s.pathSum(root, 3);
         assertThat(results)
             .hasSize(2)
             .flatExtracting(identity())
@@ -64,7 +75,7 @@ class CaseStudy1Test {
     void shouldReturnOneResultThreeLevelTree() {
         TreeNode root = getSampleTree();
 
-        List<List<Integer>> results = c.pathSum(root, 22);
+        List<List<Integer>> results = s.pathSum(root, 22);
         assertThat(results)
             .hasSize(2)
             .flatExtracting(identity())
@@ -75,10 +86,7 @@ class CaseStudy1Test {
     }
 
     @Test
-    //I don't know why, but in my IntelliJ, run this test alone will not throw StackOverflowError
-    //but run the whole test will throw StackOverflowError as expected
-    //WHY???
-    void shouldStackOverthrowMaximumLevelTree() {
+    void shouldReturnOneResultMaximumLevelTree() {
         TreeNode root = null;
 
         //test all left child
@@ -88,7 +96,7 @@ class CaseStudy1Test {
             expected.addFirst(i);
         }
 
-        List<List<Integer>> results = c.pathSum(root, 5000*5001/2);
+        List<List<Integer>> results = s.pathSum(root, 5000*5001/2);
         assertThat(results)
             .hasSize(1)
             .flatExtracting(identity())
@@ -102,7 +110,7 @@ class CaseStudy1Test {
             temp = temp.right;
         }
 
-        results = c.pathSum(root, 5000*5001/2);
+        results = s.pathSum(root, 5000*5001/2);
         assertThat(results)
             .hasSize(1)
             .flatExtracting(identity())

@@ -47,6 +47,18 @@ class SolutionTest {
     }
 
     @Test
+    void shouldReturnOneResultMinus() {
+        TreeNode right = new TreeNode(-3);
+        TreeNode root = new TreeNode(-2, null, right);
+
+        List<List<Integer>> results = s.pathSum(root, -5);
+        assertThat(results)
+            .hasSize(1)
+            .flatExtracting(identity())
+            .containsExactly(-2, -3);
+    }
+
+    @Test
     void shouldReturnTwoResult() {
         TreeNode left = new TreeNode(2);
         TreeNode right = new TreeNode(2);

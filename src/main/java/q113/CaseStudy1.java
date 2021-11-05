@@ -4,13 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This is the code from LeetCode that ran 0ms <br/>
- * However, this program should fail when the tree have maximum nodes which the height is no. of maximum nodes.<br/>
- * (the question stated "The number of nodes in the tree is in the range [0, 5000].", so a tree height >= 256 is possible.)<br/>
- * i.e. 5000 nodes all on the left-hand side or all on the right-hand side.<br/>
- * Most of the answers on LeetCode is using DFS recursion, suffering the same problem.<br/>
- * <br/>
- * <b>It is not my solution!</b> If you are the author, please contact me for the credit.
+ * <p>This is the code from LeetCode that ran 0ms.
+ * It also suffered same StackOverflowError as my {@link RecursiveSolution}.</p>
+ *
+ * <p><b>It is not my solution!</b> If you are the author, please contact me for the credit.</p>
  */
 class CaseStudy1 {
 
