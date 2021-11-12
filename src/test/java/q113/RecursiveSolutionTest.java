@@ -85,6 +85,9 @@ class RecursiveSolutionTest {
             );
     }
 
+    /**
+     * In order for this test to pass, the call stack size might need to be changed.
+     */
     @Test
     void shouldReturnOneResultMaximumLevelTree() {
         TreeNode root = null;

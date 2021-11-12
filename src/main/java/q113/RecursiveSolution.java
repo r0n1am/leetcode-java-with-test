@@ -6,10 +6,10 @@ import java.util.List;
 
 /**
  * <p>My solution with recursive DFS.</p>
- * <p>The question stated "The number of nodes in the tree is in the range [0, 5000].", so a tree height >= 256 is possible.
- * However, this algorithm failed when the tree have maximum nodes which the height is no. of maximum nodes.
+ * <p>The question stated "The number of nodes in the tree is in the range [0, 5000]."
+ * However, this algorithm may fail because of StackOverflowError (depends on call stack size)
+ * when the tree have maximum nodes which the height is no. of maximum nodes.
  * i.e. 5000 nodes all on the left-hand side or all on the right-hand side.</p>
- * <p>Most of the answers on LeetCode that using DFS recursion suffered the same problem.</p>
  */
 class RecursiveSolution {
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {

@@ -4,18 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <p>This is the code from LeetCode that ran 0ms.
- * It also suffered same StackOverflowError as my {@link RecursiveSolution}.</p>
+ * <p>This is the code from LeetCode that ran 0ms.</p>
  *
  * <p><b>It is not my solution!</b> If you are the author, please contact me for the credit.</p>
  */
 class CaseStudy1 {
 
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
-        //original with length 1000, ArrayIndexOutOfBoundsException will occur
-//        int[] arr = new int[1000];
-        //but even with 5000, the algorithm will fail with StackOverflowError
-        int[] arr = new int[5000];
+        //ArrayIndexOutOfBoundsException will occur
+        int[] arr = new int[1000];
         List<List<Integer>> list = new ArrayList<>();
         pathSum(root,targetSum,arr,list,0);
         return list;

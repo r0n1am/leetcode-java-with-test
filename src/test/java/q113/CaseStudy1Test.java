@@ -7,6 +7,7 @@ import java.util.List;
 
 import static java.util.function.Function.identity;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CaseStudy1Test {
 
@@ -75,38 +76,32 @@ class CaseStudy1Test {
     }
 
     @Test
-    //I don't know why, but in my IntelliJ, run this test alone will not throw StackOverflowError
-    //but run the whole test will throw StackOverflowError as expected
-    //WHY???
-    void shouldStackOverthrowMaximumLevelTree() {
-        TreeNode root = null;
+    void shouldThrowArrayIndexOutOfBoundsExceptionMaximumLevelTree() {
+        TreeNode temp = null;
 
         //test all left child
-        LinkedList<Integer> expected = new LinkedList<>();
         for (int i = 1; i <= 5000; ++i) {
-            root = new TreeNode(i, root, null);
-            expected.addFirst(i);
+            temp = new TreeNode(i, temp, null);
         }
 
-        List<List<Integer>> results = c.pathSum(root, 5000*5001/2);
-        assertThat(results)
-            .hasSize(1)
-            .flatExtracting(identity())
-            .containsExactlyElementsOf(expected);
+        TreeNode root = temp;
+
+        assertThrows(
+            ArrayIndexOutOfBoundsException.class,
+            () -> c.pathSum(root, 5000*5001/2)
+        );
 
         //test all right child
-        TreeNode temp = root;
         while (temp != null) {
             temp.right = temp.left;
             temp.left = null;
             temp = temp.right;
         }
 
-        results = c.pathSum(root, 5000*5001/2);
-        assertThat(results)
-            .hasSize(1)
-            .flatExtracting(identity())
-            .containsExactlyElementsOf(expected);
+        assertThrows(
+            ArrayIndexOutOfBoundsException.class,
+            () -> c.pathSum(root, 5000*5001/2)
+        );
     }
 
     private TreeNode getSampleTree() {
