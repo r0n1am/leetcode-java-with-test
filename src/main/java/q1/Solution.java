@@ -4,10 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 1. Two Sum
- * See <a herf="https://leetcode.com/problems/two-sum/">
- *       https://leetcode.com/problems/two-sum/
- *     </a>
+ * <p>1. Two Sum</p>
+ * <p>
+ *   See <a href="https://leetcode.com/problems/two-sum/">
+ *         https://leetcode.com/problems/two-sum/
+ *       </a>
+ * </p>
  */
 class Solution {
     public int[] twoSum(int[] nums, int target) {

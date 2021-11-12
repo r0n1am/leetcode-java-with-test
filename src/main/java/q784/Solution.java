@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * <p>784. Letter Case Permutation</p>
  * <p>
- *   See <a herf="https://leetcode.com/problems/letter-case-permutation/">
+ *   See <a href="https://leetcode.com/problems/letter-case-permutation/">
  *         https://leetcode.com/problems/letter-case-permutation/
  *       </a>
  * </p>

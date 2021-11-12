@@ -1,11 +1,13 @@
 package q459;
 
 /**
- * 459. Repeated Substring Pattern <br/>
- * See <a herf="https://leetcode.com/problems/repeated-substring-pattern/">
- *       https://leetcode.com/problems/repeated-substring-pattern/
- *     </a>
- *  Performance is not good.
+ * <p>459. Repeated Substring Pattern</p>
+ * <p>
+ *   See <a href="https://leetcode.com/problems/repeated-substring-pattern/">
+ *         https://leetcode.com/problems/repeated-substring-pattern/
+ *       </a>
+ * </p>
+ * <p>Performance is not good.</p>
  */
 class Solution {
     public boolean repeatedSubstringPattern(String s) {

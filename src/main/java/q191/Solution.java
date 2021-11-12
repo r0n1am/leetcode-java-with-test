@@ -1,10 +1,12 @@
 package q191;
 
 /**
- * 191. Number of 1 Bits
- * See <a href="https://leetcode.com/problems/number-of-1-bits/">
- *       https://leetcode.com/problems/number-of-1-bits/
- *     </a><br/>
+ * <p>191. Number of 1 Bits</p>
+ * <p>
+ *   See <a href="https://leetcode.com/problems/number-of-1-bits/">
+ *         https://leetcode.com/problems/number-of-1-bits/
+ *       </a>
+ * </p>
  */
 class Solution {
     // you need to treat n as an unsigned value

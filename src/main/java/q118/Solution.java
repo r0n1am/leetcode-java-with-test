@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 118. Pascal's Triangle<br/>
- * See <a herf="https://leetcode.com/problems/pascals-triangle/">
- *       https://leetcode.com/problems/pascals-triangle/
- *     </a><br/>
+ * <p>118. Pascal's Triangle</p>
+ * <p>
+ *   See <a href="https://leetcode.com/problems/pascals-triangle/">
+ *         https://leetcode.com/problems/pascals-triangle/
+ *       </a>
+ * </p>
  */
 class Solution {
     public List<List<Integer>> generate(int numRows) {

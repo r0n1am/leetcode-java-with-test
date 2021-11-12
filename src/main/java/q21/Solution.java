@@ -1,10 +1,12 @@
 package q21;
 
 /**
- * 21. Merge Two Sorted Lists<br/>
- * See <a herf="https://leetcode.com/problems/merge-two-sorted-lists/">
- *       https://leetcode.com/problems/merge-two-sorted-lists/
- *     </a><br/>
+ * <p>21. Merge Two Sorted Lists</p>
+ * <p>
+ *   See <a href="https://leetcode.com/problems/merge-two-sorted-lists/">
+ *         https://leetcode.com/problems/merge-two-sorted-lists/
+ *       </a>
+ * </p>
  */
 class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {

@@ -1,10 +1,12 @@
 package q167;
 
 /**
- * 167. Two Sum II - Input Array Is Sorted
- * See <a herf="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/">
- *       https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
- *     </a>
+ * <p>167. Two Sum II - Input Array Is Sorted</p>
+ * <p>
+ *   See <a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/">
+ *         https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+ *       </a>
+ * </p>
  */
 class Solution {
     public int[] twoSum(int[] numbers, int target) {

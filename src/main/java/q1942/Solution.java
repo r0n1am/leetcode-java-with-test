@@ -5,10 +5,12 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
- * 1942. The Number of the Smallest Unoccupied Chair<br/>
- * See <a herf="https://leetcode.com/problems/the-number-of-the-smallest-unoccupied-chair/">
- *       https://leetcode.com/problems/the-number-of-the-smallest-unoccupied-chair/
- *     </a><br/>
+ * <p>1942. The Number of the Smallest Unoccupied Chair</p>
+ * <p>
+ *   See <a href="https://leetcode.com/problems/the-number-of-the-smallest-unoccupied-chair/">
+ *         https://leetcode.com/problems/the-number-of-the-smallest-unoccupied-chair/
+ *       </a>
+ * </p>
  */
 class Solution {
 

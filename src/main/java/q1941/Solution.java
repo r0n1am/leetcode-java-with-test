@@ -1,10 +1,12 @@
 package q1941;
 
 /**
- * 1941. Check if All Characters Have Equal Number of Occurrences<br/>
- * See <a herf="https://leetcode.com/problems/check-if-all-characters-have-equal-number-of-occurrences/">
- *       https://leetcode.com/problems/check-if-all-characters-have-equal-number-of-occurrences/
- *     </a><br/>
+ * <p>1941. Check if All Characters Have Equal Number of Occurrences</p>
+ * <p>
+ *   See <a href="https://leetcode.com/problems/check-if-all-characters-have-equal-number-of-occurrences/">
+ *         https://leetcode.com/problems/check-if-all-characters-have-equal-number-of-occurrences/
+ *       </a>
+ * </p>
  */
 class Solution {
     public boolean areOccurrencesEqual(String s) {
