@@ -14,29 +14,27 @@ import java.util.List;
 class Solution {
     public List<String> generateParenthesis(int n) {
         List<String> results = new ArrayList<>();
-        generateParenthesis(results, new StringBuilder(), 0, 0, n);
+        generateParenthesis(results, new char[n*2], 0, 0, n);
         return results;
     }
 
     private void generateParenthesis(
         List<String> results,
-        StringBuilder sb,
+        char[] sb,
         int openedCount,
         int closedCount,
         int target
     ) {
         if (closedCount == target) {
-            results.add(sb.toString());
+            results.add(new String(sb));
             return;
         }
-        int currLength = sb.length();
         if (openedCount < target) {
-            sb.append("(");
+            sb[openedCount + closedCount] = '(';
             generateParenthesis(results, sb, openedCount + 1, closedCount, target);
-            sb.setLength(currLength);
         }
         if (closedCount < openedCount) {
-            sb.append(")");
+            sb[openedCount + closedCount] = ')';
             generateParenthesis(results, sb, openedCount, closedCount + 1, target);
         }
     }
