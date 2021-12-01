@@ -15,7 +15,7 @@ class RecursiveSolution {
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
         List<List<Integer>> result = new ArrayList<>();
         if (root != null) {
-            pathSum(root, result, new LinkedList<>(), 0, targetSum);
+            pathSum(root, result, new LinkedList<>(), targetSum);
         }
         return result;
     }
@@ -24,25 +24,23 @@ class RecursiveSolution {
         TreeNode currentNode,
         List<List<Integer>> result,
         LinkedList<Integer> pathVals,
-        int currentSum,
-        int targetSum
+        int remaining
     ) {
         pathVals.add(currentNode.val);
-        currentSum += currentNode.val;
 
         if (currentNode.left == null && currentNode.right == null) {
-            if (targetSum == currentSum) {
+            if (remaining == currentNode.val) {
                 result.add(new ArrayList<>(pathVals));
             }
             return;
         }
 
         if (currentNode.left != null) {
-            pathSum(currentNode.left, result, pathVals, currentSum, targetSum);
+            pathSum(currentNode.left, result, pathVals, remaining - currentNode.val);
             pathVals.removeLast();
         }
         if (currentNode.right != null) {
-            pathSum(currentNode.right, result, pathVals, currentSum, targetSum);
+            pathSum(currentNode.right, result, pathVals, remaining - currentNode.val);
             pathVals.removeLast();
         }
     }
